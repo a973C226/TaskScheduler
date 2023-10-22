@@ -1,0 +1,67 @@
+﻿<Window x:Class="TaskScheduler.SubWindows.AuthorizationWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaskScheduler.SubWindows"
+            xmlns:fa="http://schemas.fontawesome.io/icons/"
+    mc:Ignorable="d" Height="300" Width="400" FontFamily="Trebuchet MS"
+    WindowStartupLocation="CenterScreen" WindowStyle="None"
+    AllowsTransparency="True" Background="Transparent">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.ColumnSpan="3" Grid.RowSpan="3" CornerRadius="20" Background="#8a2b42"></Border>
+
+        <Border Grid.Column="1" Grid.Row="1" CornerRadius="20" Background="#c14269" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Background="#c14269" HorizontalAlignment="Center">
+                    <StackPanel Margin="0 80 0 0">
+                        <Grid Margin="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <fa:ImageAwesome Icon="User" Width="28" Height="28" Foreground="#eba5bb"/>
+                            <TextBlock Text="Username" Name="lblLogin" FontSize="24" Style="{StaticResource textHint}" Cursor="Pen" MouseDown="lblLogin_MouseDown"/>
+                            <TextBox x:Name="txtLogin" Background="#c14269" Width="250" FontSize="24" Style="{StaticResource textBox}" TextChanged="txtLogin_TextChanged"/>
+                        </Grid>
+
+                        <Separator Margin="0 12 0 11" Height="0.8" Background="#eba5bb"/>
+
+                        <Grid Margin="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <fa:ImageAwesome Icon="Key" Width="28" Height="28" Foreground="#eba5bb"/>
+                            <TextBlock Text="Password" Name="lblPassword" FontSize="24" Style="{StaticResource textHint}" Cursor="Pen" MouseDown="lblPassword_MouseDown"/>
+                            <PasswordBox x:Name="txtPassword" Background="#c14269" Width="250" FontSize="24" Style="{StaticResource passwordBox}" PasswordChanged="txtPassword_PasswordChanged"/>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Background="#c14269" Margin="30 40 30 30">
+                        <Button x:Name="AccessAuthBtn" Style="{StaticResource buttonBig}" Content="Войти" Click="AccessAuthBtn_Click"/>
+                        <Button x:Name="CancelAuthBtn" Style="{StaticResource buttonBig}" Content="Отмена" Click="CancelAuthBtn_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+
+        </Border>
+    </Grid>
+</Window>

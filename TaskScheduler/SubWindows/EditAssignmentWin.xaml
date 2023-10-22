@@ -1,0 +1,80 @@
+﻿<Window x:Class="TaskScheduler.SubWindows.EditAssignmentWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaskScheduler.SubWindows"
+            xmlns:fa="http://schemas.fontawesome.io/icons/"
+    mc:Ignorable="d" Height="420" Width="500" FontFamily="Trebuchet MS"
+    WindowStartupLocation="CenterScreen" WindowStyle="None"
+    AllowsTransparency="True" Background="Transparent">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.ColumnSpan="3" Grid.RowSpan="3" CornerRadius="20" Background="#8a2b42"></Border>
+
+        <Border Grid.Column="1" Grid.Row="1" CornerRadius="20" Background="#c14269" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Background="#c14269" HorizontalAlignment="Center">
+                    <StackPanel Margin="0 10 0 0" Width="450">
+                        <Grid Margin="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <fa:ImageAwesome Icon="Pencil" Width="28" Height="28" Foreground="#eba5bb"/>
+                            <TextBlock Text="Title" Name="lblEditTitle" Visibility="Collapsed" FontSize="24" Style="{StaticResource textHint}" Cursor="Pen" MouseDown="lblEditTitle_MouseDown"/>
+                            <TextBox x:Name="txtEditTitle" Background="#c14269" FontSize="24" Style="{StaticResource textBox}" TextChanged="txtEditTitle_TextChanged"/>
+                        </Grid>
+
+                        <Separator Margin="0 12 0 11" Height="0.8" Background="#eba5bb"/>
+
+                        <Grid Margin="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <fa:ImageAwesome Icon="Bell" Width="28" Height="28" Foreground="#eba5bb"/>
+                            <TextBlock Text="00:00-00:00" Name="lblEditTime" Visibility="Collapsed" FontSize="24" Style="{StaticResource textHint}" Cursor="Pen" MouseDown="lblEditTime_MouseDown"/>
+                            <TextBox x:Name="txtEditTime" Background="#c14269" FontSize="24" Style="{StaticResource textBox}" TextChanged="txtEditTime_TextChanged"/>
+                        </Grid>
+
+                        <Separator Margin="0 12 0 11" Height="0.8" Background="#eba5bb"/>
+
+                        <Grid Margin="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <fa:ImageAwesome Icon="Pencil" Width="28" Height="28" Foreground="#eba5bb" VerticalAlignment="Top"/>
+                            <TextBlock Text="Description" Name="lblEditDescription" VerticalAlignment="Top" Visibility="Collapsed" FontSize="24" Style="{StaticResource textHint}" Cursor="Pen" MouseDown="lblEditDescription_MouseDown"/>
+                            <TextBox x:Name="txtEditDescription" TextWrapping="Wrap" Height="200" Background="#c14269" FontSize="24" Style="{StaticResource textBox}" TextChanged="txtEditDescription_TextChanged"/>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Background="#c14269" Margin="30 40 30 30">
+                        <Button x:Name="AccessEditBtn" Style="{StaticResource buttonBig}" Content="Сохранить" Click="AccessEditBtn_Click"/>
+                        <Button x:Name="CancelEditBtn" Style="{StaticResource buttonBig}" Content="Отмена" Click="CancelEditBtn_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+
+        </Border>
+    </Grid>
+</Window>
